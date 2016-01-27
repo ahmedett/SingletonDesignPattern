@@ -33,9 +33,11 @@ public class SingletonClass {
   public static SingletonClass getCurrentInstance(final String description, final Date date) {
     if (singletonClass == null) {
       singletonClass = new SingletonClass(description, date);
+    } else {
+      singletonClass.setDescription(description);
+      singletonClass.setDate(date);
     }
-    singletonClass.setDescription(description);
-    singletonClass.setDate(date);
+
     return singletonClass;
   }
 
